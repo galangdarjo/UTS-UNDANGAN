@@ -1,0 +1,292 @@
+:root {
+  --gold: #a8875a;
+  --cream: #faf6f0;
+  --ink: #3b3530;
+}
+
+/* Navbar */
+html {
+  scroll-behavior: smooth;
+}
+section {
+  scroll-margin-top: 64px;
+} 
+
+.navbar-undangan {
+  background: rgba(28, 20, 13, 0.75);
+  backdrop-filter: blur(8px);
+}
+.navbar-undangan .navbar-brand {
+  color: #f0dcb0;
+  font-size: 1.6rem;
+}
+.navbar-undangan .nav-link {
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+}
+.navbar-undangan .nav-link:hover {
+  color: #f0dcb0;
+}
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  color: #fff;
+}
+
+/* Lapisan latar: foto + gelapkan + blur */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -20px; /* lebih besar dari section supaya tepi blur tidak putih */
+  z-index: -1;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)),
+    url("Assets/background.jpg") center / cover;
+  filter: blur(8px);
+}
+
+/* Tulisan putih */
+.hero h1,
+.hero p,
+.hero #countdown {
+  color: #fff;
+}
+.hero .gold {
+  color: #f0dcb0; /* emas muda supaya tetap terbaca di latar gelap */
+}
+
+/* Gunungan jadi putih */
+.hero .gunungan {
+  filter: brightness(0) invert(1);
+  opacity: 0.9;
+}
+
+/* Galeri: lebih kecil, berjarak, sudut melengkung */
+.galeri .container {
+  max-width: 720px;
+}
+.galeri .row {
+  --bs-gutter-x: 1.25rem;
+  --bs-gutter-y: 1.25rem;
+}
+.galeri .foto {
+  border-radius: 1rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  color: var(--ink);
+  background: var(--cream);
+}
+body.locked {
+  overflow: hidden;
+}
+h1,
+h2,
+h3,
+.serif {
+  font-family: "Cormorant Garamond", Georgia, serif;
+}
+.gold {
+  color: var(--gold);
+}
+.btn-gold {
+  background: var(--gold);
+  color: #fff;
+  border-radius: 50px;
+  padding: 0.6rem 2rem;
+  border: 0;
+}
+.btn-gold:hover {
+  background: #8f7048;
+  color: #fff;
+}
+
+/* Foto placeholder: isi file di folder foto/ */
+.foto {
+  position: relative;
+  background: #d9d4cc;
+  overflow: hidden;
+}
+.foto img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+.foto::after {
+  content: "Foto";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  letter-spacing: 0.2em;
+  font-size: 0.8rem;
+  z-index: 0;
+}
+.ratio-cover {
+  aspect-ratio: 3 / 4;
+}
+.bulat {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+/* Landing */
+#landing {
+  position: fixed;
+  inset: 0;
+  z-index: 1050;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  transition:
+    transform 0.9s ease,
+    opacity 0.9s ease;
+}
+#landing .foto {
+  position: absolute;
+  inset: 0;
+}
+#landing .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(40, 32, 25, 0.55);
+  z-index: 2;
+}
+#landing .isi {
+  position: relative;
+  z-index: 3;
+  padding: 1.5rem;
+}
+#landing.buka {
+  transform: translateY(-100%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+section {
+  padding: 4rem 0;
+}
+.kartu {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 2rem 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Hiasan*/
+/* Ornamen di bawah judul bagian */
+h2.display-6::after {
+  content: "\2756";
+  display: block;
+  margin-top: 0.6rem;
+  font-size: 1rem;
+  color: var(--gold);
+  letter-spacing: 0.5em;
+}
+
+/* Bingkai tipis di foto hero dan foto bulat */
+.foto.rounded-4 {
+  outline: 1px solid var(--gold);
+  outline-offset: 8px;
+}
+.bulat {
+  outline: 1px solid var(--gold);
+  outline-offset: 6px;
+}
+
+/* Sudut emas di kartu acara */
+.kartu {
+  position: relative;
+}
+.kartu::before,
+.kartu::after {
+  content: "";
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border: 0 solid var(--gold);
+}
+.kartu::before {
+  top: 10px;
+  left: 10px;
+  border-top-width: 1px;
+  border-left-width: 1px;
+}
+.kartu::after {
+  bottom: 10px;
+  right: 10px;
+  border-bottom-width: 1px;
+  border-right-width: 1px;
+}
+
+/* Garis ganda di landing */
+#landing .isi {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  outline: 1px solid rgba(255, 255, 255, 0.25);
+  outline-offset: 6px;
+  margin: 1rem;
+}
+
+/* Kelopak jatuh */
+#kelopak {
+  position: fixed;
+  inset: 0;
+  z-index: 1060;
+  pointer-events: none;
+  overflow: hidden;
+}
+.kelopak {
+  position: absolute;
+  top: -30px;
+  border-radius: 0 100% 0 100%;
+  opacity: 0.7;
+  animation: jatuh linear infinite;
+}
+@keyframes jatuh {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(40px, 55vh) rotate(180deg);
+  }
+  100% {
+    transform: translate(-20px, 110vh) rotate(360deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  #kelopak {
+    display: none;
+  }
+}
+
+/* Gunungan di kiri-kanan foto hero */
+.hero-bingkai {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.hero-bingkai .foto {
+  flex: 0 1 536px;
+  min-width: 0;
+}
+.gunungan {
+  width: clamp(30px, 9vw, 170px);
+  height: auto;
+  flex: none;
+  opacity: 0.9;
+}

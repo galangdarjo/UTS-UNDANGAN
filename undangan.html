@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Undangan Pernikahan</title>
+    <link rel="stylesheet" href="bootstrap-5.3.8-dist/css/bootstrap.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Lato:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="undangan.css" />
+  </head>
+  <body class="locked">
+    <!-- LANDING -->
+    <div id="landing">
+      <div class="foto">
+        <img src="Assets/background.jpg" alt="" onerror="this.remove()" />
+      </div>
+      <div class="overlay"></div>
+      <div class="isi">
+        <p class="text-uppercase mb-2" style="letter-spacing: 0.3em">
+          The Wedding Of
+        </p>
+        <h1 class="display-3 mb-3">
+          Bramantya Danendra &amp; Diah Ayu Sasmita
+        </h1>
+        <p class="mb-1">Kepada Yth. Bapak/Ibu/Saudara/i</p>
+        <h3 id="namaTamu" class="mb-4">Tamu Undangan</h3>
+        <button class="btn btn-gold" onclick="bukaUndangan()">
+          Buka Undangan
+        </button>
+      </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav
+      class="navbar navbar-expand-md fixed-top navbar-undangan"
+      data-bs-theme="dark"
+    >
+      <div class="container">
+        <a class="navbar-brand serif" href="#beranda">B &amp; D</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#menu"
+          aria-controls="menu"
+          aria-expanded="false"
+          aria-label="Buka menu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#beranda">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#mempelai">Mempelai</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#acara">Acara</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#galeri">Galeri</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="beranda" class="text-center hero" style="padding-top: 5rem">
+      <div class="container" style="max-width: 860px">
+        <p class="text-uppercase gold" style="letter-spacing: 0.3em">
+          Pernikahan Kami
+        </p>
+        <div class="hero-bingkai mb-4">
+          <img src="Assets/wayang.png" class="gunungan" alt="" />
+          <div class="foto ratio-cover rounded-4">
+            <img src="Assets/fotoutama.png" alt="" onerror="this.remove()" />
+          </div>
+          <img src="Assets/wayang.png" class="gunungan" alt="" />
+        </div>
+        <h1 class="display-4">Bramantya Danendra &amp; Diah Ayu Sasmita</h1>
+        <p class="fs-5">Sabtu, 00 Bulan 2027</p>
+        <div
+          id="countdown"
+          class="d-flex justify-content-center gap-3 mt-3 serif fs-4"
+        ></div>
+      </div>
+    </section>
+
+    <!-- AYAT / SAMBUTAN -->
+    <section class="bg-white text-center">
+      <div class="container" style="max-width: 620px">
+        <p class="fst-italic">
+          Witing tresna jalaran saka kulina. Witing mulya jalaran wani rekasa.
+          Cinta tumbuh karena kebersamaan, kebahagiaan dibangun atas komitmen
+          dan kesetiaan.
+        </p>
+        <p class="mb-0">
+          Dengan memohon rahmat dan ridho Tuhan Yang Maha Esa, kami bermaksud
+          mengundang Bapak/Ibu/Saudara/i untuk hadir di hari bahagia kami.
+        </p>
+      </div>
+    </section>
+
+    <!-- MEMPELAI -->
+    <section id="mempelai" class="text-center">
+      <div class="container">
+        <h2 class="display-6 mb-5">Mempelai</h2>
+        <div class="row g-5 justify-content-center">
+          <div class="col-md-5">
+            <div class="foto bulat mb-3">
+              <img src="Assets/pria.png" alt="" onerror="this.remove()" />
+            </div>
+            <h3>Bramantya Danendra</h3>
+            <p class="mb-0">Putra saking Bapak Nugroho &amp; Ibu Hartati</p>
+          </div>
+          <div class="col-md-5">
+            <div class="foto bulat mb-3">
+              <img src="Assets/wanita.png" alt="" onerror="this.remove()" />
+            </div>
+            <h3>Diah Ayu Sasmita</h3>
+            <p class="mb-0">Putri saking Bapak Bambang &amp; Ibu Sri Wahyuni</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACARA -->
+    <section id="acara" class="bg-white text-center">
+      <div class="container">
+        <h2 class="display-6 mb-5">Acara</h2>
+        <div class="row g-4 justify-content-center">
+          <div class="col-md-5">
+            <div class="kartu h-100">
+              <h3 class="gold">Akad Nikah</h3>
+              <p class="mb-1">Sabtu, 00 Bulan 2027</p>
+              <p class="mb-1">Pukul 08.00 WIB - selesai</p>
+              <p class="mb-0">
+                Gedung A10 Kampus 1 UNESA, Jl. Ketintang Wiyata, Kec. Gayungan,
+                Surabaya
+              </p>
+            </div>
+          </div>
+          <div class="col-md-5">
+            <div class="kartu h-100">
+              <h3 class="gold">Resepsi</h3>
+              <p class="mb-1">Sabtu, 00 Bulan 2027</p>
+              <p class="mb-1">Pukul 11.00 - 14.00 WIB</p>
+              <p class="mb-0">
+                Gedung A10 Kampus 1 UNESA, Jl. Ketintang Wiyata, Kec. Gayungan,
+                Surabaya
+              </p>
+            </div>
+          </div>
+        </div>
+        <a
+          class="btn btn-gold mt-4"
+          href="https://maps.app.goo.gl/Y7VsLtDZi8caiuGP7"
+          target="_blank"
+          rel="noopener"
+          >Lihat Lokasi</a
+        >
+      </div>
+    </section>
+
+    <!-- GALERI -->
+    <section id="galeri" class="text-center galeri">
+      <div class="container">
+        <h2 class="display-6 mb-4">Galeri</h2>
+        <div class="row g-2">
+          <div class="col-6 col-md-4">
+            <div class="foto ratio-cover">
+              <img src="Assets/bersama1.png" alt="" onerror="this.remove()" />
+            </div>
+          </div>
+          <div class="col-6 col-md-4">
+            <div class="foto ratio-cover">
+              <img src="Assets/bersama2.png" alt="" onerror="this.remove()" />
+            </div>
+          </div>
+          <div class="col-6 col-md-4">
+            <div class="foto ratio-cover">
+              <img src="Assets/bersama3.png" alt="" onerror="this.remove()" />
+            </div>
+          </div>
+          <div class="col-6 col-md-4">
+            <div class="foto ratio-cover">
+              <img src="Assets/bersama4.png" alt="" onerror="this.remove()" />
+            </div>
+          </div>
+          <div class="col-6 col-md-4">
+            <div class="foto ratio-cover">
+              <img src="Assets/bersama5.png" alt="" onerror="this.remove()" />
+            </div>
+          </div>
+          <div class="col-6 col-md-4">
+            <div class="foto ratio-cover">
+              <img src="Assets/bersama6.png" alt="" onerror="this.remove()" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MUSIK -->
+    <audio id="musik" src="Assets/sinarengan.mp3" loop autoplay></audio>
+
+    <footer class="text-center py-4">
+      <p class="serif fs-4 mb-0">Bramantya Danendra &amp; Diah Ayu Sasmita</p>
+      <small class="text-muted">Terima kasih atas doa dan kehadiran Anda</small>
+    </footer>
+
+    <script src="bootstrap-5.3.8-dist/js/bootstrap.bundle.js"></script>
+    <script src="undangan.js"></script>
+  </body>
+</html>
